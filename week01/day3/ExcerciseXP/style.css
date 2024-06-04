@@ -32,6 +32,7 @@ body{
     height:100%;
     position: absolute;
     border-radius: 50%;
+    clip-path: circle(50%);
     object-fit: cover;
 }
 
@@ -41,7 +42,8 @@ body{
     display: grid;
     grid-template-areas: 
     "contacts summary summary"
-    "education experience experience" ;
+    "education experience experience"
+    "skills experience experience" ;
 }
 
 .contacts{
@@ -59,6 +61,12 @@ body{
 .education{
     padding: 10px;
     grid-area: education;
+    border: 1px solid red;
+} 
+
+.skills{
+    padding: 10px;
+    grid-area: skills;
     border: 1px solid red;
 } 
 
@@ -86,12 +94,15 @@ body{
         order:2;
     }
     
-    .education{
-        order:4;
-    } 
-    
     .experience{
         order:3;
     }
+    .education{
+        order:4;
+    } 
+    .skills{
+        order:5;
+    }     
+
         
 }
