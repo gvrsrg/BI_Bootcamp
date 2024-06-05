@@ -1,0 +1,32 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    width: 440px;
+    height: 440px;
+    border: 1px solid #ccc;
+    grid-gap: 5px;
+}
+
+.container div{
+    width: 20px;
+    height: 20px;
+}
+
+.container div:nth-child(3n+1) {
+    background-color: #ff7100;
+}
+
+.container div:nth-child(3n+2) {
+    background-color: #ffb173;
+}
+
+.container div:nth-child(3n+3) {
+    background-color: #a64a00;
+}
