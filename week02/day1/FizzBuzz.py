@@ -16,5 +16,3 @@ elif magic_number % 3 == 0:
     print("Fizz")
 elif magic_number % 5 == 0:
     print("Buzz")
-
-
