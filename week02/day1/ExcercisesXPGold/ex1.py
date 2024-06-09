@@ -1,0 +1,1 @@
+print(*(item*4 for item in ["HelloWorld\n", "I love python\n"]))
