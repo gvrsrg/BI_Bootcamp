@@ -7,8 +7,9 @@ if len(input_string) < string_length:
 elif len(input_string) > string_length:
     print("The string is too long.")
 else:
-        
-    print(input_string[0]+input_string[-1])
+    print("perfect string") 
+
+    print(f"First letter:{input_string[0]}, last letter:{input_string[-1]}")
 
     for i in range(string_length+1):
         print(input_string[:i])
