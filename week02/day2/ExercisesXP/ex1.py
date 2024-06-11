@@ -8,7 +8,10 @@ my_fav_numbers.add(97)
 print(my_fav_numbers)
 
 # Remove the last number.
+my_fav_numbers = list(my_fav_numbers)
 my_fav_numbers.pop()
+my_fav_numbers = set(my_fav_numbers)
+
 print(my_fav_numbers)
 
 # Create a set called friend_fav_numbers with your friend’s favorites numbers.
