@@ -11,7 +11,7 @@ user_word = input("Enter a word: ")
 word_dict = {}
 
 for index, char in enumerate(user_word):
-    if char in word_dict.keys():
+    if char in word_dict:
         word_dict[char].append(index)
     else:
         word_dict[char] = [index]
