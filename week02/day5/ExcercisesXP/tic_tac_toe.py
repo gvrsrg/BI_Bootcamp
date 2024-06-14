@@ -2,9 +2,9 @@ def show_game(board):
     border = "*"*17
     h_separator = "*  ---|---|---  *"
     print(border)
-    size = len(board)
+    size = 3
     for index, line in enumerate(board):
-        print('*   '+' | '.join(line)+'   *')
+        print(f"*   {' | '.join(line)}   *")
         if(index < size-1): 
            print(h_separator)
     print(border)
