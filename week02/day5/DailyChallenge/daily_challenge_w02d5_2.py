@@ -33,6 +33,11 @@ def longest_word_v2(text):
     index_max = length_list.index(max_length)
     return word_list[index_max]
 
+def longest_word_v3(text):
+    word_list = text.split(" ")
+    max_word = max(word_list, key=len)
+    return max_word
+
 
 start_time = time.time()
 print(longest_word("Margaret's toy is a pretty doll."))
@@ -50,3 +55,11 @@ print(longest_word_v2("A thing of beauty is a joy forever."))
 
 print(longest_word_v2("Forgetfulness is by all means powerless!"))
 print(f"V2 execution time: {time.time()-start_time}")
+
+start_time = time.time()
+print(longest_word_v3("Margaret's toy is a pretty doll."))
+
+print(longest_word_v3("A thing of beauty is a joy forever."))
+
+print(longest_word_v3("Forgetfulness is by all means powerless!"))
+print(f"V3 execution time: {time.time()-start_time}")
