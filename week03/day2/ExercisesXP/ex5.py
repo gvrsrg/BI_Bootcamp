@@ -50,11 +50,11 @@ def main():
 
     incredible_family = TheIncredibles("Cohen", family_members)
 
-    incredible_family.family_presentation()
+    incredible_family.incredible_presentation()
 
     incredible_family.born(name="Jack", age=0, gender="Male", is_child=True, power="Unknown Power", incredible_name="Baby Jack")
 
-    incredible_family.family_presentation()
+    incredible_family.incredible_presentation()
 
     for name in ["Sarah", "Jack", "Michael"]:
         try:
