@@ -23,7 +23,17 @@ class Farm():
         return types
     
     def get_short_info(self):
-        animals_text = ', '.join([key + 's' if value > 1 else key for key, value in self.animals.items()])
+        # without calling get_animals_types
+        #animals_text = ', '.join([key + 's' if value > 1 else key for key, value in self.animals.items()])
+
+        # with calling get_animals_types
+        animals_text = ', '.join([animal_type + 's' if self.animals[animal_type] > 1 else animal_type for animal_type in self.get_animals_types()])
+
+        parts = animals_text.rsplit(',', 1)
+    
+        if len(parts) > 1:
+            animals_text = ' and'.join(parts)
+
         return f"{self.owner}'s farm has {animals_text}."
     
 # Add a method called get_animal_types to the Farm class. 
