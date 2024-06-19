@@ -1,7 +1,9 @@
 import os
 print(os.getcwd())
+path = os.path.dirname(os.path.realpath(__file__))
 
-filelocation = "nameslist.txt"
+
+filelocation = path+"\\nameslist.txt"
 
 with open(filelocation) as file:
     # Read the file line by line
