@@ -20,7 +20,7 @@ def validate_input(word:str):
 def menu():
     valid_choice = False
     while not valid_choice:
-        print("Welcome to Anagram Checker!")
+        print("\n\nWelcome to Anagram Checker!")
         print("1. Generate all possible anagrams of a word")
         print("2. Quit")
         try:
@@ -43,13 +43,20 @@ def main():
         valid_word = False
         while not valid_word:
             word = input("Enter a word to check for anagrams: ").strip()
+
             valid_word = validate_input(word)
+
+        print(f'YOUR WORD: "{word.upper()}"')
+        if anagram_checker.is_walid_word(word):
+            print("this is a valid English word.")
+        else:
+            print("this is not a valid English word.")
 
         anagrams = anagram_checker.get_anagrams(word)
         if len(anagrams) > 0:
-            print(f"Anagrams for the word {word} are: {anagrams}")
+            print(f"Anagrams for the word {word.upper()} are: {', '.join(anagrams)}")
         else:
-            print(f"No anagrams found for the word {word}")
+            print(f"No anagrams found for the word {word.upper()}")
 
         
         play_on = (menu() == 1)

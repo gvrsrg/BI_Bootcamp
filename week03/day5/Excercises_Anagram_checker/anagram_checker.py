@@ -15,7 +15,7 @@ class AnagramChecker:
 
     def get_anagrams(self, word):
         word = word.upper()
-        permutations = [''.join(w) for w in list(itertools.permutations(word))]
+        permutations = [''.join(w) for w in set(itertools.permutations(word))]
         anagrams = [w for w in permutations if sorted(w) == sorted(word) and
                     w != word and self.is_walid_word(w)]
         return anagrams
