@@ -40,9 +40,9 @@
 -- left join customer_profile on customer.id = customer_profile.customer_id
 
 --The number of customers that are not LoggedIn	
--- select
--- 	count(*)
--- from customer
--- left join customer_profile on customer.id = customer_profile.customer_id
--- where customer_profile.isLoggedIn is null
+select
+	count(*)
+from customer
+left join customer_profile on customer.id = customer_profile.customer_id
+where  not (coalesce(customer_profile.isLoggedIn, false))
 
