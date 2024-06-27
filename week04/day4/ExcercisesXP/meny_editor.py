@@ -49,16 +49,27 @@ def show_user_menu():
             print("Invalid input. Please try again.")
 
 def add_item_to_menu():
-    pass        
+    name = input("Please enter the name of the item you would like to add: ")
+    price = input("Please enter the price of the item you would like to add: ")
+    item = MenuItem(name, price)
+    item.save()
+    print("Item was added successfully!")
 
 def remove_item_from_menu():
-    pass        
+    name = input("Please enter the name of the item you would like to remove: ")
+    item = MenuItem(name)
+    item.delete()
+    print("Item was removed successfully!")
 
 def view_item():
-    pass        
+    name = input("Please enter the name of the item you would like to view: ")
+    item = MenuItem(name)
+    print(item)
 
 def update_item_from_menu():
-    pass        
+    name = input("Please enter the name of the item you would like to update: ")
+    price = input("Please enter the new price of the item you would like to update: ")
+    item = MenuItem(name, price)
 
 def show_restaurant_menu():
     pass        
