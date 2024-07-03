@@ -60,39 +60,30 @@ function populatePlanetWithMoons(planetDiv){
     planetDiv.classList.add(planetName)
     let moons = planetDetails["moons"]
     if (moons.length>0){
-        moonContainer = document.createElement('div');
+        let moonContainer = document.createElement('div');
         moonContainer.classList.add('mooncontainer')
         for (let moon in moons){
             let newMoon = document.createElement('div')
             newMoon.classList.add('moon')
-            newMoon.classList.add('mooninline')  //moon1, moon2 ...
+            newMoon.style.left = moon*30+'px'
             newMoon.textContent = planetDetails["moons"][moon]
-            moonContainer.append(newMoon)
+            moonContainer.appendChild(newMoon)
         }
-        planetDiv.append(moonContainer)
+        planetDiv.appendChild(moonContainer)
     }    
     }
 
 
 function dailyChallenge(){
-    var stylemooninline = document.createElement('style');
-    stylemooninline.type = 'text/css';
-    stylemooninline.innerHTML = '.mooninline { display:inline-block; position: relative; }';
-    document.getElementsByTagName('head')[0].appendChild(stylemooninline);
-
-    var stylemooncontainer = document.createElement('style');
-    stylemooncontainer.type = 'text/css';
-    stylemooncontainer.innerHTML = '.mooncontainer { display: flex; flex-direction: row;}';
-    document.getElementsByTagName('head')[0].appendChild(stylemooncontainer);
-
-
-    
+    let container = document.getElementsByClassName('listPlanets')[0]
     for (let planet of planets){
         let newDiv = document.createElement('div')
         newDiv.classList.add('planet')
         newDiv.classList.add(planet.toLocaleLowerCase())
         newDiv.textContent = planet
         populatePlanetWithMoons(newDiv)
-        document.querySelector('.listPlanets').append(newDiv)
+        container.append(newDiv)
     }
+    let button = document.getElementById('populatePlanets')
+    button.setAttribute('disabled', true);
 }
