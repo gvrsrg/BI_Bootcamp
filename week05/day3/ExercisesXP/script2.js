@@ -40,13 +40,13 @@ function ex2(){
             } else {
                 const usersAnswer = document.querySelector('.usersAnswer')
                 const lifname = document.createElement('li')
-                lifname.textContent = firstName + ' ' + lastName
+                lifname.textContent = firstName
                 usersAnswer.appendChild(lifname)
                 const lilname = document.createElement('li')
                 lilname.textContent = lastName
                 usersAnswer.appendChild(lilname)
             }
-        })
+    })
 }
 
 ex2()
