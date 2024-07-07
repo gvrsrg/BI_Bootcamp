@@ -5,7 +5,6 @@ function generateMadLib(event) {
     const personValue = document.getElementById('person').value;
     const verbValue = document.getElementById('verb').value;
     const placeValue = document.getElementById('place').value;
-    srcElement[0].value
     const stories = [
         `Once upon a time, a ${adjectiveValue} ${nounValue} named ${personValue} decided to ${verbValue} at the ${placeValue}. It was an adventure they would never forget!`,
         `${personValue} always thought that the ${adjectiveValue} ${nounValue} would ${verbValue} at the ${placeValue}. And one day, it did.`,
@@ -27,7 +26,7 @@ function dc(){
     const form = document.getElementById('libform');
     form.addEventListener('submit', generateMadLib);
 
-    
+
     document.getElementById('noun').setAttribute("required", "");
     document.getElementById('adjective').setAttribute("required", "");
     document.getElementById('person').setAttribute("required", "");
