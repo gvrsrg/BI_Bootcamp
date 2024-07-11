@@ -42,7 +42,8 @@ input{
     background-color: turquoise;
     align-items: center;
     justify-content: center;
-    font-family: sans-serif
+    font-family: sans-serif;
+    text-align: center;
 
     
 }
@@ -54,4 +55,5 @@ input{
     align-items: center;
     justify-content: center;
     background-color: aliceblue;
+    vertical-align: middle;
   }
