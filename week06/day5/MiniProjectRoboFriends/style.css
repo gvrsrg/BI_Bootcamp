@@ -5,6 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: left;
+    background-image: url('./assets/card-pattern.png');
 }
 form{
     left: 40px;
@@ -22,6 +23,7 @@ input{
     background-image: url('./assets/circuit-pattern.png');
     background-repeat: repeat;
     margin: 0 auto;
+    justify-content: center;
 }
 
 .mainarea{
