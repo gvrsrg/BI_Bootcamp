@@ -20,7 +20,7 @@ function isAnagram(str1, str2){
     }
 
     arr1.forEach((element,index) => {
-        if(arr1[index] !== arr2[index]){
+        if(element !== arr2[index]){
             return false
         }
     })
