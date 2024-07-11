@@ -1,0 +1,13 @@
+.container{
+    display: flex;
+    flex-flow: wrap;
+    width: 80%;
+}
+.card{
+    width: 300px;
+    height: 400px;
+    border: 1px solid black;
+    border-radius: 15px;
+    margin: 10px;
+    background-image: './assets/card-pattern.png';
+}
