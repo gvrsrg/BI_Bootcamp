@@ -49,8 +49,13 @@ const showGif = (responce) => {
         imgPath = gif.fixed_height_still.url
     }
 
-    const gifs = document.getElementById("gifs")
-    
+
+    let gifs = document.getElementById("gifs")
+    if (gifs == undefined) {
+        gifs = document.createElement("div");
+        gifs.setAttribute("id", "gifs");
+        document.body.appendChild(gifs);
+    }    
     let deleteAll = document.getElementById("deleteAll")
     if (deleteAll == undefined) {
         deleteAll = document.createElement("button");
