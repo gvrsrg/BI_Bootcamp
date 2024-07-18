@@ -8,12 +8,13 @@ function makeSortedArray(str){
         };
     });
 
-    return cleanArr
+    return cleanArr.sort().join('')
 }
 
 function isAnagram(str1, str2){
     let arr1 = makeSortedArray(str1)
     let arr2 = makeSortedArray(str2)
+    return arr1 === arr2
 
     if(arr1.length !== arr2.length){
         return false
@@ -29,6 +30,6 @@ function isAnagram(str1, str2){
 }
 
 
-console.log(isAnagram("Astronomer","Moon starer"));
+console.log(isAnagram("Astronomer","Moon starerttt"));
 console.log(isAnagram("School master","The classroom"));
 console.log(isAnagram("The Morse Code","Here come dots"));

@@ -32,6 +32,7 @@ input{
     background-image: url('./assets/circuit-pattern.png');
     background-repeat: repeat;
     align-items: center;
+    min-height: 100vh;
 }
 
 .card{
