@@ -1,4 +1,5 @@
 import express from "express";
+import { books } from "./books.js";
 
 const app = express();
 app.use(express.json())
@@ -9,38 +10,7 @@ app.listen(PORT, () => {
 });
 
 
-const books = [
-    {
-      id: 1,
-      title: "To Kill a Mockingbird",
-      author: "Harper Lee",
-      publishedYear: 1960
-    },
-    {
-      id: 2,
-      title: "1984",
-      author: "George Orwell",
-      publishedYear: 1949
-    },
-    {
-      id: 3,
-      title: "Pride and Prejudice",
-      author: "Jane Austen",
-      publishedYear: 1813
-    },
-    {
-      id: 4,
-      title: "The Great Gatsby",
-      author: "F. Scott Fitzgerald",
-      publishedYear: 1925
-    },
-    {
-      id: 5,
-      title: "Moby-Dick",
-      author: "Herman Melville",
-      publishedYear: 1851
-    }
-];
+
 
 
 app.get("/api/books", (req, res) => {
@@ -68,8 +38,7 @@ app.post("/api/books", (req, res) => {
 
     books.push(newBook);
 
-    res.writeHead(201)
-    res.end(JSON.stringify(newBook));
+    res.status(201).json(newBook);
 
 })
 
