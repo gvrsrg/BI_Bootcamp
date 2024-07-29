@@ -34,3 +34,32 @@ app.get("/random-emoji", (req, res) => {
 
     res.json({...randomEmoji, msg:"Guess who", distractions:distractions});
 })
+
+app.get("/", (req, res) => {
+    res.sendFile(__dirname + "/public/index.html")
+})
+
+app.post("/user", (req, res) => {
+    const { userName, difficulty } = req.body
+    currentUser = userName
+    score = 0
+  
+    res.json({ userName: currentUser, difficulty })
+})
+
+app.post("/emojis", (req, res) => {
+    const { choice, correctAnswer } = req.body;
+  
+    if (choice === correctAnswer.name) {
+      score++;
+      res.status(200).json({
+        message: "Your answer is correct! 💪",
+        score,
+      });
+    } else {
+      res.status(200).json({
+        message: "Your answer is not correct. 🙁",
+        score,
+      });
+    }
+});

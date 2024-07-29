@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;  
+}
+
+form input {
+    margin: 0.5em;
+}
+
+form label {
+    float: left;
+    margin: 0.5em;
+} 
+form select {
+    float: left;
+    margin: 0.5em;
+} 
+form button {
+
+    margin: 0.5em;
+} 
+
+#game-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+} 
+
+#emoji-choice-form {
+    align-items: center;
+    gap: 1rem;
+    padding: 20px;
+}  
+
