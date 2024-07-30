@@ -1,8 +1,7 @@
-import React from 'react'
-
-export default function Button({setCount}) {
+const Button = ({setCount}) => {
   return (
     <button onClick={() => setCount(count => count + 1)}>+</button>
   )
 }
 
+export default Button;

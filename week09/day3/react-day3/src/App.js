@@ -1,10 +1,10 @@
 import './App.css';
 import React from 'react'
-import VotingApp from './components/VotingApp';
-import Counter from './components/Counter';
-import Parent from './components/Parent';
-import Child from './components/Child';
-import ErrorBoundary from './ErrorBoundary';
+import VotingApp from './components/VotingApp.jsx';
+import Counter from './components/Counter.js';
+import Parent from './components/Parent.js';
+import Child from './components/Child.js';
+import ErrorBoundary from './ErrorBoundary.js';
 
 function App() {
   //const [count, setCount] = React.useState(0)
@@ -12,17 +12,17 @@ function App() {
     <div className="App">
       <VotingApp/>
       <br/>
-      <ErrorBoundary  fallback={<p>Counter 1 is down</p>}>
-        <Counter/>
-      </ErrorBoundary>
       <ErrorBoundary fallback={<p>Counter 1 is down</p>}>
-        <Counter/>
+        <Counter />
       </ErrorBoundary>
-      <ErrorBoundary fallback={<p>Counter 1 is down</p>}>
-        <Counter/>
+      <ErrorBoundary fallback={<p>Counter 2 is down</p>}>
+        <Counter />
+      </ErrorBoundary>
+      <ErrorBoundary fallback={<p>Counter 3 is down</p>}>
+        <Counter />
       </ErrorBoundary>
       <br/>
-      <Parent auth="sergey">
+      <Parent auth="admin">
         <Child />
       </Parent>
 

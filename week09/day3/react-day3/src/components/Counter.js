@@ -1,8 +1,8 @@
-import React from 'react'
-import Button from './Button'
+import {useState} from 'react'
+import Button from './Button.js'
 
-export default function Counter() {
-    const [count, setCount] = React.useState(0)
+function Counter() {
+    const [count, setCount] = useState(0)
 
     if (count>5){
         throw new Error("AAAAAAAAAAAAAA!!!!!!!!")
@@ -13,3 +13,4 @@ export default function Counter() {
     </div>
     )
 }
+export default Counter;
