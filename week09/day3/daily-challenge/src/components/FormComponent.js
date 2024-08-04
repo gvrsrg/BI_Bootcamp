@@ -1,7 +1,7 @@
 import { useState } from "react";
 import FormInformation from "./FormInformation.js";
 
-function Form() {
+export default function FormComponent() {
   const [inputs, setInputs] = useState({
     firstName: "",
     lastName: "",
@@ -33,10 +33,16 @@ function Form() {
       age,
       gender: selectedGender,
       destination,
-      lactoseFree: lactose ? "on" : "off",
-    }).toString();
+    })
+    const options = {'nutsFree':nuts,
+      'lactoseFree': lactose,
+      'vegan': vegan}
+    Object.keys(options).forEach((key) => {if (options[key]){
+        queryParams.append(key, 'on')
+    } })
+    const stringParams = queryParams.toString();
 
-    const url = `http://localhost:3000/?${queryParams}`;
+    const url = `http://localhost:3000/?${stringParams}`;
 
     try {
       const res = await fetch(url, {
@@ -59,7 +65,7 @@ function Form() {
     }
   }
 
-  function handleInputs(e) {
+  function handleChange(e) {
     const { name, value, type, checked } = e.target;
     if (type === "radio") {
       setInputs({ ...inputs, [name]: value });
@@ -78,25 +84,25 @@ function Form() {
           id="firstName"
           name="firstName"
           value={firstName}
-          onChange={handleInputs}
+          onChange={handleChange}
           placeholder="First Name"
         />
-
+        <br/>
         <input
           type="text"
           id="lastName"
           name="lastName"
           value={lastName}
-          onChange={handleInputs}
+          onChange={handleChange}
           placeholder="Last Name"
         />
-
+        <br/>
         <input
           type="number"
           id="age"
           name="age"
           value={age}
-          onChange={handleInputs}
+          onChange={handleChange}
           placeholder="Age"
         />
         <br/>
@@ -107,7 +113,7 @@ function Form() {
             name="selectedGender"
             value="male"
             checked={selectedGender === "male"}
-            onChange={handleInputs}
+            onChange={handleChange}
           />
           Male
         </label>
@@ -118,7 +124,7 @@ function Form() {
             name="selectedGender"
             value="female"
             checked={selectedGender === "female"}
-            onChange={handleInputs}
+            onChange={handleChange}
           />
           Female
         </label>
@@ -129,7 +135,7 @@ function Form() {
           id="destination"
           name="destination"
           value={destination}
-          onChange={handleInputs}
+          onChange={handleChange}
         >
           <option value="">-- Please Choose a destination --</option>
           <option value="thailand">Thailand</option>
@@ -143,31 +149,31 @@ function Form() {
             type="checkbox"
             name="nuts"
             checked={nuts}
-            onChange={handleInputs}
+            onChange={handleChange}
           />
           Nuts
         </label>
-
+        <br/>
         <label>
           <input
             type="checkbox"
             name="lactose"
             checked={lactose}
-            onChange={handleInputs}
+            onChange={handleChange}
           />
           Lactose
         </label>
-
+        <br/>
         <label>
           <input
             type="checkbox"
             name="vegan"
             checked={vegan}
-            onChange={handleInputs}
+            onChange={handleChange}
           />
           Vegan
         </label>
-
+        <br/>
         <button type="submit">Submit</button>
       </form>
 
@@ -185,4 +191,3 @@ function Form() {
   );
 }
 
-export default Form;
