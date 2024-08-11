@@ -75,8 +75,8 @@ let num1 = <Number> num;
 console.log(num1, typeof num1);
 console.log(num, typeof num);
 
-const element = document.getElementById("subtitle") as HTMLInputElement;
-element.value = "Hello, TypeScript!";
+const element = document.getElementById("subtitle") as HTMLHeadingElement;
+element.textContent = "Hello, TypeScript!";
 
 // Exercise 9
 enum EnvType {

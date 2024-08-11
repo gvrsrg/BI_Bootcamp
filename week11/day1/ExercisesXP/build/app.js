@@ -57,7 +57,7 @@ let num1 = num;
 console.log(num1, typeof num1);
 console.log(num, typeof num);
 const element = document.getElementById("subtitle");
-element.value = "Hello, TypeScript!";
+element.textContent = "Hello, TypeScript!";
 // Exercise 9
 var EnvType;
 (function (EnvType) {
