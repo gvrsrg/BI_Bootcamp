@@ -24,7 +24,7 @@ class Game():
             user_item = input("""Enter your choice 
                               1. Rock
                               2. Paper
-                              3. Scissors): 
+                              3. Scissors 
                               """)
             valid_choice = user_item.lower() in ['1', '2', '3']
             if not valid_choice:
@@ -54,7 +54,7 @@ class Game():
         user_item = self.get_user_item()
         computer_item = self.get_computer_item()
         result = self.get_game_result(user_item, computer_item)
-        return result
+        return (user_item, computer_item, result)
     
 
         

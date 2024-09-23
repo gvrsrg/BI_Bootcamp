@@ -31,8 +31,11 @@ Choose your option:
         user_input = 'invalid'
     return user_input
 
-def print_results(results):
-    pass
+def print_game_result(result):
+    print(result[2])
+
+def print_score(game):
+    print(game.results)
 
 def main():
     game = Game()
@@ -42,8 +45,11 @@ def main():
     while action != 'x' and action != 'q':
         if action == 'g':
             result = game.play()
-        stats.append(result)
-        print_results(result)
+            stats.append(result)
+            print_game_result(result)
+        elif action == 's':
+            print_score(game)
+            
         action = get_user_menu_choice()
 
 if __name__ == "__main__":
