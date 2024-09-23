@@ -12,11 +12,11 @@ app.use(cookieParser());
 app.use(
   cors({
     credentials: true,
-    origin: ["http://localhost:5173", "http://localhost:3000"],
+    origin: ["http://localhost:5175", "http://localhost:3000"],
   })
 );
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`run on ${PORT}`);
 });
